@@ -1,0 +1,30 @@
+{
+  "name": "api-rest-functional-test",
+  "version": "1.0.0",
+  "description": "https call automation library using axios and cucumber. It is developed for CODERIO SRL by Gaston Genaud.",
+  "scripts": {
+    "test": "./node_modules/.bin/cucumber-js -f json:cucumber.json src/features/ -r src/steps/ --parallel 3 && node ./report.js",
+    "test:smoke": "./node_modules/.bin/cucumber-js -f json:cucumber.json src/features/ -r src/steps/ --tags '@smoke'",
+    "report": "node ./report.js",
+    "smoke-bdd": "(yarn test:smoke && yarn report) || yarn report"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv-flow": "^3.2.0",
+    "lodash": "^4.17.20"
+  },
+  "devDependencies": {
+    "cucumber": "^6.0.5",
+    "cucumber-html-reporter": "^5.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gastongenaud-coderio/api-rest-functional-test.git"
+  },
+  "author": "Gaston Alejandro Genaud",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gastongenaud-coderio/api-rest-functional-test/issues"
+  },
+  "homepage": "https://github.com/gastongenaud-coderio/api-rest-functional-test#readme"
+}
